@@ -136,7 +136,7 @@
 - hosts: management-hosts
 
 
-- hosts: proxy-hosts idr-omero-hosts
+- hosts: proxy-hosts omero-hosts
 
   # TODO: Ideally we'd use the `validate:` option to check these config
   # files, but it's not possible to validate only a fragment.

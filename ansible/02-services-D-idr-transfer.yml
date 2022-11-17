@@ -1,6 +1,6 @@
 # IDR anonymous FTP server
 
-- hosts: ftp-hosts idr-dev
+- hosts: ftp-hosts dev
 
   roles:
     - role: ome.cli_utils

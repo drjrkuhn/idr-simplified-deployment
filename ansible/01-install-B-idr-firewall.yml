@@ -1,6 +1,6 @@
 # Firewall configuration
 
-- hosts: database-hosts idr-omero-hosts
+- ohosts: database-hosts mero-hosts
 
   roles:
     - role: ome.iptables_raw
