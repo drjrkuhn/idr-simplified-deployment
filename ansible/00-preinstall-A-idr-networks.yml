@@ -4,14 +4,14 @@
 
 # Update the bastion servers first since they provides ssh-proxy access to
 # other servers
-- hosts: idr-bastion-hosts
+- hosts: bastion-hosts
   roles:
   - role: ome.network_cloud_interfaces
     network_cloud_interface_regex: '^eth.*'
     when: 'idr_provision_networks | default(True)'
 
 # All other hosts (e.g. those requiring NFS access on a separate network)
-- hosts: idr-hosts
+- hosts: hosts
   roles:
   - role: ome.network_cloud_interfaces
     network_cloud_interface_regex: '^eth.*'

@@ -1,9 +1,9 @@
 # Search ngine +  Elasticsearch
 
-- hosts: idr-database-hosts
+- hosts: database-hosts
 
 - name: Deploying search engine
-  hosts: idr-searchengine-hosts
+  hosts: searchengine-hosts
 
   tasks:
   - name: Get database host

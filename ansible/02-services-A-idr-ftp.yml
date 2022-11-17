@@ -1,6 +1,6 @@
 # IDR anonymous FTP server
 
-- hosts: idr-ftp-hosts
+- hosts: ftp-hosts
 
   roles:
   - role: ome.docker

@@ -11,10 +11,10 @@
 
 
 # Load hostvars (production OMERO)
-- hosts: idr-omeroreadonly-hosts
+- hosts: omeroreadonly-hosts
 
 
-- hosts: idr-proxy-hosts
+- hosts: proxy-hosts
 
   pre_tasks:
 

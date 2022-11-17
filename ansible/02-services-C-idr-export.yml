@@ -1,6 +1,6 @@
 # Zarr servers
 
-- hosts: idr-dev
+- hosts: dev
 
   roles:
     - role: ome.cli_utils

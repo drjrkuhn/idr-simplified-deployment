@@ -16,7 +16,7 @@
 # TODO: Refactor the openmicroscopy.haproxy role so that rsyslog is separate
 # syslog isn't included in the docker image
 - name: Prepare idr-proxy
-  hosts: idr-proxy-docker
+  hosts: proxy-docker
   tasks:
   - name: Install rsyslog
     yum:

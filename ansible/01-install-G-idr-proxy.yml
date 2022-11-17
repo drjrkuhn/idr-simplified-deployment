@@ -4,21 +4,21 @@
 # full list of backend services to be proxied
 
 # Load hostvars (production OMERO)
-- hosts: idr-omero-hosts
+- hosts: omero-hosts
 
 
 # Load hostvars (management server)
-- hosts: idr-management-hosts
+- hosts: management-hosts
 
 # Load hostvars (search engine server)
-- hosts: idr-searchengine-hosts
+- hosts: searchengine-hosts
 
 
-- hosts: idr-proxy-hosts
+- hosts: proxy-hosts
   roles:
   - role: ome.selinux_utils
 
-- hosts: idr-proxy-hosts
+- hosts: proxy-hosts
 
   pre_tasks:
 

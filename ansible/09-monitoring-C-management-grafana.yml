@@ -2,7 +2,7 @@
 # Assumes there is already a local docker container called prometheus
 # as a datasource
 
-- hosts: idr-management-hosts
+- hosts: management-hosts
 
   tasks:
 

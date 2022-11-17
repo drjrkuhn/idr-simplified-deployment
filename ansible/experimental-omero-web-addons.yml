@@ -1,6 +1,6 @@
 # Experimental: fpbioimage and iviewer
 
-- hosts: idr-omero-hosts
+- hosts: omero-hosts
 
   roles:
   # Needed for handlers

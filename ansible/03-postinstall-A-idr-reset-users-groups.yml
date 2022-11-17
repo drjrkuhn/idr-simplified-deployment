@@ -5,12 +5,12 @@
 # Only run this if you are deploying a non production copy of the IDR for testing
 
 
-- hosts: idr-database-hosts
+- hosts: database-hosts
 #  name: Get facts from database hosts (need IP)
 
 
 # TODO: The set_fact tasks are duplicated from idr-omero.yml
-- hosts: idr-omeroreadwrite-hosts
+- hosts: omeroreadwrite-hosts
 
   pre_tasks:
 

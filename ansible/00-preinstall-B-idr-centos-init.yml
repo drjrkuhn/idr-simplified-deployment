@@ -1,7 +1,7 @@
 # Initialisation tasks for CentOS-7 VMs
 # - Persistent journald logs https://unix.stackexchange.com/a/159390
 
-- hosts: idr-hosts
+- hosts: hosts
 
   tasks:
   - name: centos-init | Install locate

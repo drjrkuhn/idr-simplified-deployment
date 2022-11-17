@@ -4,7 +4,7 @@
 
 # This assumes docker has already been installed
 # (by management-prometheus.yml)
-- hosts: idr-management-hosts
+- hosts: management-hosts
 
   tasks:
 
@@ -133,10 +133,10 @@
 
 
 # Load hostvars for management server
-- hosts: idr-management-hosts
+- hosts: management-hosts
 
 
-- hosts: idr-proxy-hosts idr-omero-hosts
+- hosts: proxy-hosts idr-omero-hosts
 
   # TODO: Ideally we'd use the `validate:` option to check these config
   # files, but it's not possible to validate only a fragment.

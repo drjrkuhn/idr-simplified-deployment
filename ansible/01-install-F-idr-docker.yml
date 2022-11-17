@@ -1,6 +1,6 @@
 # Setup IDR Docker nodes
 
-- hosts: idr-docker-hosts
+- hosts: docker-hosts
 
   roles:
     - role: ome.docker

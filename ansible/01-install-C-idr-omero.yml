@@ -3,7 +3,7 @@
 # - `idr_net_iface=iface` if your servers use a network interface other
 #   then eth0 for inter-machine networking
 
-- hosts: idr-database-hosts
+- hosts: database-hosts
 
   roles:
   - role: ome.postgresql
@@ -22,7 +22,7 @@
 # The next two plays set a hostvar so that the OMERO servers connect to
 # the correct database
 
-- hosts: idr-omero-hosts
+- hosts: omero-hosts
   tasks:
   - name: Get database host
     set_fact:
@@ -43,7 +43,7 @@
 # - group_vars/omeroreadwrite-hosts.yml
 # - group_vars/omeroreadonly-hosts.yml
 
-- hosts: idr-omero-hosts
+- hosts: omero-hosts
 
   roles:
   - role: ome.basedeps
@@ -51,7 +51,7 @@
   - role: ome.python_pydata
   - role: ome.analysis_tools
 
-- hosts: idr-omeroreadwrite-hosts
+- hosts: omeroreadwrite-hosts
 
   roles:
   - role: ome.omero_server
@@ -62,7 +62,7 @@
 # - OMERO.scripts are deleted
 # - an IDR-specific version of Bio-Formats is installed
 
-- hosts: idr-omeroreadwrite-hosts
+- hosts: omeroreadwrite-hosts
 
   roles:
   - role: ome.omero_common

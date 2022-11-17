@@ -1,9 +1,9 @@
 # Tasks setting up the hosts (/etc/hosts, sudoers, local users)
 
-- hosts: idr-hosts
+- hosts: hosts
 # Load hostvars
 
-- hosts: idr-hosts
+- hosts: hosts
 
   roles:
   - role: ome.sudoers

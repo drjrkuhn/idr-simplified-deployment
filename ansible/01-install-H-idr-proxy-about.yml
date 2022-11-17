@@ -1,6 +1,6 @@
 # Setup the IDR web proxy about pages
 
-- hosts: idr-proxy-hosts
+- hosts: proxy-hosts
 
   roles:
   - role: ome.deploy_archive
