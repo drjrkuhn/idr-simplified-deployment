@@ -1,7 +1,7 @@
 # Install OMERO.web on the IDR
 
 # TODO: Add omeroweb hosts group
-- hosts: "{{ idr_environment | default('idr') }}-omero-hosts"
+- hosts: idr-omero-hosts
 
   roles:
   - role: ome.redis

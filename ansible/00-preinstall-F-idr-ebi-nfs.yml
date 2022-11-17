@@ -1,6 +1,5 @@
 # Setup Embassy IDR NFS shares
-- hosts: >
-    {{ idr_environment | default('idr') }}-ebi-nfs
+- hosts: idr-ebi-nfs
 
   roles:
 

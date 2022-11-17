@@ -7,8 +7,7 @@
 
 # Reboot non-bastion hosts, don't wait because checking that SSH is open
 # via a proxy-host is difficult
-- hosts: >
-    {{ idr_environment | default('idr') }}-hosts
+- hosts: idr-hosts
     !bastion-hosts
   roles:
   - role: ome.reboot_server
@@ -17,8 +16,7 @@
 
 # Reboot bastion hosts, don't wait because with the default dynamic inventory
 # it proxies itself instead of using the external IP
-- hosts: >
-    {{ idr_environment | default('idr') }}-hosts
+- hosts: idr-hosts
     &bastion-hosts
   roles:
   - role: ome.reboot_server

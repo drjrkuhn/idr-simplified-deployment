@@ -1,12 +1,12 @@
 # Runs all storage related playbooks for setting up the IDR infrastructure
 # This will be specific to your Openstack and local environment
 
-- import_playbook: idr-networks.yml
+- import_playbook: 00-preinstall-A-idr-networks.yml
 
-- import_playbook: idr-centos-init.yml
-- import_playbook: idr-upgrade-dist.yml
-- import_playbook: os-idr-volumes.yml
-- import_playbook: idr-dundee-nfs.yml
-- import_playbook: idr-ebi-nfs.yml
+- import_playbook: 00-preinstall-B-idr-centos-init.yml
+- import_playbook: 00-preinstall-C-idr-upgrade-dist.yml
+- import_playbook: 00-preinstall-D-os-idr-volumes.yml
+- import_playbook: 00-preinstall-E-idr-dundee-nfs.yml
+- import_playbook: 00-preinstall-F-idr-ebi-nfs.yml
 
-- import_playbook: idr-reboot-if-kernel.yml
+- import_playbook: 00-preinstall-G-idr-reboot-if-kernel.yml

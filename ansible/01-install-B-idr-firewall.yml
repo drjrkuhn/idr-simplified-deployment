@@ -1,8 +1,6 @@
 # Firewall configuration
 
-- hosts: >
-    {{ idr_environment | default('idr') }}-database-hosts
-    {{ idr_environment | default('idr') }}-omero-hosts
+- hosts: idr-database-hosts idr-omero-hosts
 
   roles:
     - role: ome.iptables_raw
@@ -27,7 +25,7 @@
 #     {{ idr_environment | default('idr') }}-management-hosts
 
 
-- hosts: "{{ idr_environment | default('idr') }}-proxy-hosts"
+- hosts: idr-proxy-hosts
 
   roles:
     - role: ome.iptables_raw

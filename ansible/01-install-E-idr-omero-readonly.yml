@@ -5,7 +5,7 @@
 # TODO: Consider putting some of this into a role
 
 # OMERO read-write fileserver for OMERO read-only
-- hosts: "{{ idr_environment | default('idr') }}-omeroreadwrite-hosts"
+- hosts: idr-omeroreadwrite-hosts
 
   pre_tasks:
   - name: Create idr-metadata directory
@@ -48,7 +48,7 @@
 
 
 # Read-only OMERO.server config
-- hosts: "{{ idr_environment | default('idr') }}-omeroreadonly-hosts"
+- hosts: idr-omeroreadonly-hosts
 
   pre_tasks:
   - name: Get fileserver host
@@ -177,7 +177,7 @@
       ))
 
 
-- hosts: "{{ idr_environment | default('idr') }}-omeroreadonly-hosts"
+- hosts: idr-omeroreadonly-hosts
   tasks:
   - name: Get database host
     set_fact:
@@ -187,8 +187,7 @@
         'ansible_' + (idr_net_iface | default('eth0'))]['ipv4']['address'] }}
 
 
-- hosts: >
-    {{ idr_environment | default('idr') }}-omeroreadonly-hosts
+- hosts: idr-omeroreadonly-hosts
 
   roles:
   - role: ome.omero_server
@@ -199,7 +198,7 @@
 # - OMERO.scripts are deleted
 # - an IDR-specific version of Bio-Formats is installed
 
-- hosts: "{{ idr_environment | default('idr') }}-omeroreadonly-hosts"
+- hosts: idr-omeroreadonly-hosts
 
   roles:
   - role: ome.omero_common

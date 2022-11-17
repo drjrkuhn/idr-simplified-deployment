@@ -11,11 +11,10 @@
 
 
 # Load hostvars (production OMERO)
-- hosts: >
-    {{ idr_environment | default('idr') }}-omeroreadonly-hosts
+- hosts: idr-omeroreadonly-hosts
 
 
-- hosts: "{{ idr_environment | default('idr') }}-proxy-hosts"
+- hosts: idr-proxy-hosts
 
   pre_tasks:
 
@@ -23,7 +22,7 @@
     set_fact:
       _omero_omeroreadonly_hosts: >-
         {{
-          groups[idr_environment | default('idr') + '-omeroreadonly-hosts'] |
+          groups['idr-omeroreadonly-hosts'] |
           map('extract', hostvars,
             ['ansible_' + (idr_net_iface | default('eth0')), 'ipv4', 'address']) | sort
         }}

@@ -1,7 +1,6 @@
 # Setup IDR Docker nodes
 
-- hosts: >
-    {{ idr_environment | default('idr') }}-docker-hosts
+- hosts: idr-docker-hosts
 
   roles:
     - role: ome.docker

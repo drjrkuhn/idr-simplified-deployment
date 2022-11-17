@@ -1,8 +1,6 @@
 # IDR anonymous FTP server
 
-- hosts: >
-    "{{ idr_environment | default('idr') }}-ftp-hosts"
-    "{{ idr_environment_idr | default('idr') }}-dev"
+- hosts: idr-ftp-hosts idr-dev
 
   roles:
     - role: ome.cli_utils

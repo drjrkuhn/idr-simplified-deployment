@@ -1,8 +1,7 @@
 ---
 # Playbook to upgrade all system packages
 
-- hosts: >
-    {{ idr_environment | default('idr') }}-hosts
+- hosts: idr-hosts
   roles:
   - role: ome.upgrade_distpackages
   # Ideally we should auto-reboot, but if the SSH proxy host is rebooted

@@ -1,13 +1,12 @@
 # Experimental: Prometheus
 
-- hosts: >
-    {{ idr_environment | default('idr') }}-hosts
+- hosts: idr-hosts
 
   roles:
   - role: ome.prometheus_node
 
 
-- hosts: "{{ idr_environment | default('idr') }}-database-hosts"
+- hosts: idr-database-hosts
   roles:
   - role: ome.prometheus_postgres
     prometheus_postgres_dbname: idr
@@ -17,7 +16,7 @@
 #    - queries-pg_stat_statements.yml
 
 
-- hosts: "{{ idr_environment | default('idr') }}-omero-hosts"
+- hosts: idr-omero-hosts
 
   roles:
 
@@ -52,8 +51,7 @@
     jmx_javaagent: /opt/prometheus/jars/jmx_prometheus_javaagent.jar
 
 
-- hosts: >
-    {{ idr_environment | default('idr') }}-dockermanager-hosts
+- hosts: idr-dockermanager-hosts
 
   roles:
 
@@ -61,9 +59,9 @@
 
 
 # If this is a pilot monitoring server we haven't yet loaded hostvars
-- hosts: "{{ idr_environment | default('idr') }}-pilotidr-hosts"
+- hosts: idr-pilotidr-hosts
 
-- hosts: "{{ idr_environment | default('idr') }}-management-hosts"
+- hosts: idr-management-hosts
 
   roles:
 

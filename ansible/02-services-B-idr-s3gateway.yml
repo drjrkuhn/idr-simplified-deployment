@@ -1,6 +1,6 @@
 # IDR submission S3 gateway server
 
-- hosts: "{{ idr_environment | default('idr') }}-ftp-hosts"
+- hosts: idr-ftp-hosts
 
   # Assumes docker is already installed (in idr-ftp.yml)
 

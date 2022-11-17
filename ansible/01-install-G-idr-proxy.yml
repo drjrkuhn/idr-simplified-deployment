@@ -4,24 +4,21 @@
 # full list of backend services to be proxied
 
 # Load hostvars (production OMERO)
-- hosts: >
-    {{ idr_environment | default('idr') }}-omero-hosts
+- hosts: idr-omero-hosts
 
 
 # Load hostvars (management server)
-- hosts: >
-    {{ idr_environment | default('idr') }}-management-hosts
+- hosts: idr-management-hosts
 
 # Load hostvars (search engine server)
-- hosts: >
-    {{ idr_environment | default('idr') }}-searchengine-hosts
+- hosts: idr-searchengine-hosts
 
 
-- hosts: "{{ idr_environment | default('idr') }}-proxy-hosts"
+- hosts: idr-proxy-hosts
   roles:
   - role: ome.selinux_utils
 
-- hosts: "{{ idr_environment | default('idr') }}-proxy-hosts"
+- hosts: idr-proxy-hosts
 
   pre_tasks:
 
@@ -31,7 +28,7 @@
     set_fact:
       _omero_omeroreadonly_hosts: >-
         {{
-          groups[idr_environment | default('idr') + '-omeroreadonly-hosts'] |
+          groups['idr-omeroreadonly-hosts'] |
           map('extract', hostvars,
             ['ansible_' + (idr_net_iface | default('eth0')), 'ipv4', 'address']) | sort
         }}
@@ -52,7 +49,7 @@
         }}
       omero_omeroreadwrite_hosts: >-
         {{
-          groups[idr_environment | default('idr') + '-omeroreadwrite-hosts'] |
+          groups['idr-omeroreadwrite-hosts'] |
           map('extract', hostvars,
             ['ansible_' + (idr_net_iface | default('eth0')), 'ipv4', 'address']) | list
         }}
@@ -62,20 +59,20 @@
       management_host_ansible: >-
         {{
           hostvars[groups[
-            idr_environment | default('idr') + '-management-hosts'][0]]
+            'idr-management-hosts'][0]]
             ['ansible_' + (idr_net_iface | default('eth0'))]['ipv4']['address']
         }}
-    when: groups[idr_environment | default('idr') + '-management-hosts'] is defined
+    when: groups['idr-management-hosts'] is defined
 
   - name: Get search engine server IP
     set_fact:
       searchengine_host_ansible: >-
         {{
           hostvars[groups[
-            idr_environment | default('idr') + '-searchengine-hosts'][0]]
+            'idr-searchengine-hosts'][0]]
             ['ansible_' + (idr_net_iface | default('eth0'))]['ipv4']['address']
         }}
-    when: groups[idr_environment | default('idr') + '-searchengine-hosts'] is defined
+    when: groups['idr-searchengine-hosts'] is defined
 
   roles:
   # Default to a self-signed certificate

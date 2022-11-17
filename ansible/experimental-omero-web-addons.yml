@@ -1,6 +1,6 @@
 # Experimental: fpbioimage and iviewer
 
-- hosts: "{{ idr_environment | default('idr') }}-omero-hosts"
+- hosts: idr-omero-hosts
 
   roles:
   # Needed for handlers

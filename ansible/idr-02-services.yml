@@ -1,14 +1,14 @@
 # Runs all playbooks for setting up services built on top of the IDR
 
 ### Ingress services
-- import_playbook: idr-ftp.yml
-- import_playbook: idr-s3gateway.yml
+- import_playbook: 02-services-A-idr-ftp.yml
+- import_playbook: 02-services-B-idr-s3gateway.yml
 
 ### Export services
-- import_playbook: idr-export.yml
+- import_playbook: 02-services-C-idr-export.yml
 
 ### Transfer services
-- import_playbook: idr-transfer.yml
+- import_playbook: 02-services-D-idr-transfer.yml
 
 ## Search services
-- import_playbook: idr-searchengine.yml
+- import_playbook: 02-services-E-idr-searchengine.yml
