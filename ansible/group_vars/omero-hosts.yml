@@ -46,22 +46,42 @@ idr_bf_jars:
     group: idr
     version: "0.6.8"
 
+###
+### ROLE: ome.ice  
+###   https://github.com/ome/ansible-role-ice/
+###
+
 ice_install_devel: false
 ice_install_python: false
 # If you're using a CI build you might need to disable omego SSL verification
 #idr_ANSIBLE_ENVIRONMENT_VARIABLES: { OMEGO_SSL_NO_VERIFY: 1 }
+
+###
+### ROLE: ome.postgresql  
+###   https://github.com/ome/ansible-role-postgresql
+###
 
 # This is needed to ensure the client version matches the server
 postgresql_version: "11"
 
 
 ######################################################################
+###
+### ROLE: ome.fluentd  
+###   https://github.com/ome/ansible-role-fluentd/
+###
+
 # openmicroscopy.fluentd vars
 fluentd_source_configs:
 - files/fluentd/omero.conf
 
 
 ######################################################################
+###
+### ROLE: ome.omero_server  
+###   https://github.com/ome/ansible-role-omero-server/
+###
+
 # openmicroscopy.omero-server role vars
 
 omero_server_release: "{{ idr_omero_server_release }}"
@@ -113,6 +133,11 @@ omero_server_config_set:
 omero_server_selfsigned_certificates: True
 
 ######################################################################
+###
+### ROLE: ome.java  
+###   https://github.com/ome/ansible-role-java/
+###
+
 # Other dependent role vars
 
 java_versions:
@@ -120,9 +145,19 @@ java_versions:
 # Install JDK to provide jstack
 java_jdk_install: True
 
+###
+### ROLE: ome.omero_logmonitor  
+###   https://github.com/ome/ansible-role-omero-logmonitor/
+###
+
 omero_logmonitor_basedir: /opt/omero/logmonitor
 # TODO: separate server and web configurations
 omero_logmonitor_logs_dir: /opt/omero/server/OMERO.server/var/log
+
+###
+### ROLE: ome.omero_user  
+###   https://github.com/ome/ansible-role-omero-user/
+###
 
 omero_user_system: omero-server
 
@@ -130,6 +165,10 @@ omero_user_system: omero-server
 # TODO: The rest of this file should go into a new omero-web-hosts group
 
 ######################################################################
+###
+### ROLE: ome.omero_web
+###   https://github.com/ome/ansible-role-omero-web/
+###
 # openmicroscopy.omero-web role vars
 
 omero_web_python3: true

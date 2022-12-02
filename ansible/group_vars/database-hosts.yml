@@ -1,5 +1,10 @@
 # Parameters for database servers
 
+###
+### ROLE: ome.postgresql  
+###   https://github.com/ome/ansible-role-postgresql
+###
+
 postgresql_server_listen: "'*'"
 
 postgresql_server_auth:

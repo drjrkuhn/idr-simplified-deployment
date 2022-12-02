@@ -1,1 +1,7 @@
+
+###
+### ROLE: ome.celery.docker
+###   https://github.com/ome/ansible-role-celery-docker/
+###
+
 docker_use_ipv4_nic_mtu: True

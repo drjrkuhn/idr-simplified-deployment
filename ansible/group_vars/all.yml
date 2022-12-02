@@ -1,2 +1,7 @@
+###
+### ROLE: ome.upgrade_distpackages
+###   https://github.com/ome/ansible-role-upgrade-distpackages/
+###
+
 upgrade_distpackages_excludes:
 - "docker*"

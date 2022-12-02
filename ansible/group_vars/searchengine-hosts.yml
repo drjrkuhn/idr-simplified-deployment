@@ -1,3 +1,9 @@
+###
+### ROLE: idr.openstack_idr_instance
+###   https://github.com/IDR/ansible-role-openstack-idr-instance/
+###
+
+
 apps_folder: /data
 #database_server_url: "{{ omero_db_host_ansible }}"
 database_port: 5432

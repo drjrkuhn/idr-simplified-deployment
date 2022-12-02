@@ -2,12 +2,18 @@
 # This includes OMERO.web and Jupyter
 
 ######################################################################
+### Internal
 # Maintenance flag and URI
 omero_maintenance_flag: /srv/www/omero-maintenance.flag
 omero_maintenance_uri: /about/omero-maintenance.html
 
 
 ######################################################################
+###
+### ROLE: ome.nginx_proxy
+###   https://github.com/ome/ansible-role-nginx-proxy/
+###
+
 # nginx and SSL
 
 # The stable line is now 1.12
@@ -361,6 +367,12 @@ idr_haproxy_frontend_omero_host: idr.openmicroscopy.org
 ######################################################################
 # Static webpages (/about) on proxy
 
+###
+### ROLE: ome.deploy_archive
+###   https://github.com/ome/ansible-role-deploy-archive/
+###
+
+
 idr_openmicroscopy_org_version: 2022.10.31
 deploy_archive_dest_dir: /srv/www/{{ idr_openmicroscopy_org_version }}
 deploy_archive_src_url: https://github.com/IDR/idr.openmicroscopy.org/releases/download/{{ idr_openmicroscopy_org_version }}/idr.openmicroscopy.org.tar.gz
@@ -374,6 +386,11 @@ idr_deployment_web_version_value: "{{ idr_environment | default('idr') }}"
 
 
 ######################################################################
+###
+### ROLE: ome.fluentd  
+###   https://github.com/ome/ansible-role-fluentd/
+###
+
 # openmicroscopy.fluentd vars
 fluentd_groups:
 - adm
