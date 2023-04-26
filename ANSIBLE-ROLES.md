@@ -71,7 +71,7 @@ ansible-role-ssl-certificate        | ome.ssl_certificate
 ansible-role-storage-volume-initialise| ome.storage_volume_initialise
 ansible-role-sudoers                | ome.sudoers
 ansible-role-system-monitor-agent   |
-ansible-role-upgrade-distpackages   | ome.upgrade_distpackages
+ansible-role-upgrade-distpackages   | ome.upgrade_distpackages  | Upgrades all packages installed with the distribution's package manager. 
 ansible-role-versioncontrol-utils   | ome.versioncontrol_utils
 infrastructure-extract-ansible-role | 
 ome-ansible-molecule                | 
